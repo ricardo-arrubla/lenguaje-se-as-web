@@ -116,7 +116,7 @@ class LessonService {
 
     // Verificar si está desbloqueada
     const user = await User.findById(userId);
-    const isUnlocked = await lesson.isUnlocked For(user);
+    const isUnlocked = await lesson.isUnlockedFor(user);
     
     if (!isUnlocked) {
       throw new Error('Lección bloqueada. Complete la lección requerida primero.');
