@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'gestures',    
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +142,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
     # Agrega otros puertos si se utiliza un puerto diferente
 ]
+
+# --- Configuración REST Framework ---
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
